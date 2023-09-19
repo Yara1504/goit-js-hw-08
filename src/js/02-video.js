@@ -18,6 +18,5 @@ if (saveTime) {
 player.on('timeupdate', ({ seconds }) => {
   newLocalStorage(seconds);
 });
-
 player.on('play', () => {
 });
