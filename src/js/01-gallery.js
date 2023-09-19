@@ -1,23 +1,10 @@
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 import { galleryItems } from './gallery-items.js';
-//import SimpleLightbox from "simplelightbox";
-//import "simplelightbox/dist/simple-lightbox.min.css";
+
+gallery.style.listStyle = "none"; 
 
 const galleryList = document.querySelector(`.gallery`);
-
-galleryList.addEventListener(`click`, (event) => {
-    event.preventDefault();
-
-    const clickElement = event.target;
-
-    if (clickElement.classList.contains(`gallery__image`)) {
-        const imageLink = clickElement.getAttribute(`src`);
-
-        const basicBox = basicLightbox.create(`
-        <img src="${imageLink}"/>`);
-
-        basicBox.show();
-}
-});
 
 const galleryMarkup = galleryItems.map((galleryItem) =>
     `<li class="gallery__item">
@@ -28,3 +15,8 @@ const galleryMarkup = galleryItems.map((galleryItem) =>
 `).join(``);
 
 galleryList.insertAdjacentHTML('beforeend', galleryMarkup);
+
+new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
