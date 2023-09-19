@@ -7,7 +7,7 @@ const saveTime = localStorage.getItem('videoplayer-current-time');
 
 const newLocalStorage = throttle((currentTime) => {
   localStorage.setItem('videoplayer-current-time', currentTime);
-}, 100); 
+}, 1000); 
 
 if (saveTime) {
   player.setCurrentTime(parseFloat(saveTime)).catch((error) => {
