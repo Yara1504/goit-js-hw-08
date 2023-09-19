@@ -2,9 +2,9 @@ import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 import { galleryItems } from './gallery-items.js';
 
-gallery.style.listStyle = "none"; 
-
 const galleryList = document.querySelector(`.gallery`);
+
+galleryList.style.listStyle = "none"; 
 
 const galleryMarkup = galleryItems.map((galleryItem) =>
     `<li class="gallery__item">
@@ -20,3 +20,4 @@ new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
+  
