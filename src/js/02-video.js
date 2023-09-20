@@ -5,6 +5,10 @@ const iframe = document.getElementById('vimeo-player');
 const player = new Vimeo(iframe);
 const saveTime = localStorage.getItem('videoplayer-current-time');
 
+if (!saveTime) {
+  saveTime = '0';
+}
+
 const newLocalStorage = throttle((currentTime) => {
   localStorage.setItem('videoplayer-current-time', currentTime);
 }, 1000); 

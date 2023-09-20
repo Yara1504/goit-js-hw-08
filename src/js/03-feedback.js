@@ -28,8 +28,8 @@ function clickSubmit(event) {
   messageInput.value = '';
 
   console.log({
-    email: emailInput.value,
-    message: messageInput.value,
+    email: saveData.email,
+    message: saveData.message,
   });
 }
 
