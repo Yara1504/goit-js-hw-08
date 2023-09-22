@@ -4,6 +4,7 @@ import throttle from 'lodash.throttle';
 const emailInput = document.querySelector('input[name="email"]');
 const messageInput = document.querySelector('textarea[name="message"]');
 const feedbackForm = document.querySelector('.feedback-form');
+let saveData = {};
 
 emailInput.addEventListener('input', dataEntry);
 messageInput.addEventListener('input', dataEntry);
@@ -13,10 +14,11 @@ function dataEntry() {
   const emailValue = emailInput.value;
   const messageValue = messageInput.value;
 
-  const saveData = {
+  saveData = {
     email: emailValue,
     message: messageValue,
   };
+
 
   saveFormDataThrottled(saveData);
 }
@@ -43,6 +45,7 @@ function formData() {
     const loadFormData = JSON.parse(formDataJSON);
     emailInput.value = loadFormData.email;
     messageInput.value = loadFormData.message;
+    saveData = loadFormData;
   }
 }
 
