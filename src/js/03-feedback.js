@@ -26,6 +26,14 @@ function dataEntry() {
 function clickSubmit(event) {
   event.preventDefault();
 
+  const emailValue = emailInput.value;
+  const messageValue = messageInput.value;
+
+  if (!emailValue || !messageValue) {
+    alert('Потрібно заповнити обидва поля.');
+    return;
+  }
+
   emailInput.value = '';
   messageInput.value = '';
 
